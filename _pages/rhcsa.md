@@ -10,10 +10,13 @@ permlink: "/RHCSA/"
   <h2>Chapters</h2>
 
   <ul class="posts">
-    {% for chapter in site.rhcsa %}
+
+{% for chapter in site.rhcsa %}
+        {% if chapter.status == "publish" %}
       <li>
-        <a class="post-link" href="{{ chapter.url}}">{{ chapter.title }}</a>
+      <a class="post-link" href="{{ chapter.url}}">{{ chapter.title }}</a>
       </li>
-    {% endfor %}
+       {% endif %}
+{% endfor %}
   </ul>
 </div>
